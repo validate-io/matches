@@ -1,4 +1,4 @@
-matches
+Matches
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -19,15 +19,26 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var lib = require( 'validate.io-matches' );
+var matches = require( 'validate.io-matches' );
+
+console.log( matches( 'beep', 'beep,boop,bop' ) );
+// Returns true
+
+var opts = [1,3,5,7,9];
+console.log( matches( 5, opts.join(',') ) );
+// Returns true
+
+console.log( matches( 'bap', 'beep,boop,bop' ) );
+// Returns false
 ```
+
+## Notes
+
+* 	This method applies __only__ to `string` and `number` value types. For any other type, the method returns `false`.
+* 	The list of acceptable `matches` should be serialized as a comma-delimited `string`.
 
 
 ## Examples
-
-``` javascript
-var lib = require( 'validate.io-matches' );
-```
 
 To run the example code from the top-level application directory,
 
