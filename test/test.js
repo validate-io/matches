@@ -42,6 +42,7 @@ describe( 'validate.io-matches', function tests() {
 				'Beep',
 				'boo',
 				'beep,boop',
+				'eep',
 				function(){},
 				null,
 				NaN,
