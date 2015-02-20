@@ -1,6 +1,6 @@
 {
   "name": "validate.io-matches",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Validates if a value matches any one of a set of specified values.",
   "author": {
     "name": "Athan Reines",
