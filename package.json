@@ -29,7 +29,11 @@
     "validator",
     "valid",
     "one of",
-    "matches"
+    "matches",
+    "type",
+    "check",
+    "is",
+    "match"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/matches/issues"
