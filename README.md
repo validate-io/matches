@@ -16,29 +16,43 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-To use the module,
-
 ``` javascript
 var matches = require( 'validate.io-matches' );
-
-console.log( matches( 'beep', 'beep,boop,bop' ) );
-// Returns true
-
-var opts = [1,3,5,7,9];
-console.log( matches( 5, opts.join(',') ) );
-// Returns true
-
-console.log( matches( 'bap', 'beep,boop,bop' ) );
-// Returns false
 ```
+
+#### matches( value, options )
+
+Validates if a value matches any one of a set of specified values.
+
+``` javascript
+var value = 'c',
+	options = 'a,b,c,d,e';
+
+var bool = matches( value, options );
+// returns true
+```
+
 
 ## Notes
 
 * 	This method applies __only__ to `string` and `number` value types. For any other type, the method returns `false`.
+*	`numeric` values are converted to `strings`.
 * 	The list of acceptable `matches` should be serialized as a comma-delimited `string`.
 
 
 ## Examples
+
+``` javascript
+console.log( matches( 'beep', 'beep,boop,bop' ) );
+// returns true
+
+var opts = [1,3,5,7,9];
+console.log( matches( 5, opts.join(',') ) );
+// returns true
+
+console.log( matches( 'bap', 'beep,boop,bop' ) );
+// returns false
+```
 
 To run the example code from the top-level application directory,
 
@@ -51,7 +65,7 @@ $ node ./examples/index.js
 
 ### Unit
 
-Unit tests use the [Mocha](http://visionmedia.github.io/mocha) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
+Unit tests use the [Mocha](http://mochajs.org) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -71,16 +85,16 @@ $ make test-cov
 Istanbul creates a `./reports/coverage` directory. To access an HTML version of the report,
 
 ``` bash
-$ open reports/coverage/lcov-report/index.html
+$ make view-cov
 ```
 
 
+---
 ## License
 
 [MIT license](http://opensource.org/licenses/MIT). 
 
 
----
 ## Copyright
 
 Copyright &copy; 2014. Athan Reines.
